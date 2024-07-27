@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    background: #000;
+}
+
+.loader {
+    position: relative;
+    width: 300px;
+    height: 10px;
+    background: #fff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0005);
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, green , yellow, blue, red, #01f2ff, rgb(26, 255, 0),yellow, blue, red, rgb(255, 106, 0), rgb(93, 12, 73));
+    background-size: 500%;
+    animation: animate 20s linear infinite;
+}
+
+.loader::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, green , yellow, blue, red, #01f2ff, rgb(26, 255, 0),yellow, blue, red, rgb(255, 106, 0), rgb(93, 12, 73));
+    background-size: 500%;
+    animation: animate 20s linear infinite;
+    filter: blur(20px);
+}
+
+@keyframes animate {
+    from {
+        background-position: 0% ;
+    } to {
+        background-position: 500% 0;
+    }
+}
